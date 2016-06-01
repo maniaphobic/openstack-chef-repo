@@ -5,11 +5,11 @@ that you can still build a cluster from the ground up with any changes we push u
 
 This framework also gives us an opportunity to show different Reference Architectures and a sane example on how to start with OpenStack and Chef.
 
-With the `master` branch of the cookbooks, which is currently tied to the base OpenStack Liberty release, this supports deploying to Ubuntu 14.04 and CentOS 7.1 for all-in-one with nova-network.  Support for all-in-one with Neutron, and multi-node support, is a work in progress.
+With the `master` branch of the cookbooks, which is currently tied to the base OpenStack Liberty release, this supports deploying to Ubuntu 14.04 and CentOS 7.2 for all-in-one with nova-network.  Support for all-in-one with Neutron, and multi-node support, is a work in progress.
 
 ## Prereqs
 
-- [ChefDK](https://downloads.chef.io/chef-dk/) 0.9.0 or later
+- [ChefDK](https://downloads.chef.io/chef-dk/) 0.9.0 or 0.10.0
 - [Vagrant](https://www.vagrantup.com/downloads.html) 1.7.2 or later with [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or some other provider
 
 ## Initial Setup Steps
@@ -21,8 +21,8 @@ $ chef exec rake berks_vendor
 ```
 
 The OpenStack cookbooks by default use databags for configuring passwords.  There are four
-data_bags : *user_passwords*, *db_passwords*, *service_passwords*, *secrets*. I have a already created
-the `data_bags/` directory, so you shouldn't need to make them, if you do something's broken.
+data_bags : *user_passwords*, *db_passwords*, *service_passwords*, *secrets*. I already created
+the `data_bags/` directory, so you shouldn't need to make them; if you do something's broken.
 See [Databags](#databags) section below for more details.
 
 **NOTE**: If you are running Ubuntu 14.04 LTS and as your **base** compute machine, you should note that the shipped
